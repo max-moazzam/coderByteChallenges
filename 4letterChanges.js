@@ -6,8 +6,8 @@ function LetterChanges (str) {
     var letterChange = []; //New array created which will hold the new string
     
   	for (i=0; i < str.length; i++) { /*For loop which will loop the index of the entered string, 
-the nested for loop will loop through the index of the alphalphabet variable, 
-if a match is found the next letter (j+1) is entered into the new array 
+the nested for loop will loop through the index of the alphabet variable, 
+if a match is found the next letter (j+1) is entered into the new array
 and j will be set to 27 to stop the loop,
  a special case will be made for alphabet[25] which is Z, which will then go back to A (alphabet[0]),
  if no match is found then the new array will simply be entered with the
