@@ -1,0 +1,48 @@
+//Function that takes in a string and returns true or false.
+//If the string has each of its letters surrounded by a +,
+//Then a true result is returned, if not then false.
+//The function assumes that at least one letter is entered.
+
+//The function works by looping through the string parameter,
+//And looping through the alphabet and checking to see if there,
+//Is a match, if there is a match and the character before and after,
+//Is a +, then a true result is inputted into an array.
+//Furthermore, if a character is not in the alphabet then a true,
+//Result is inputted. False is only inputted if an alphabet,
+//Character is matched and there is not a + before or after it.
+//A final loop is made to check through this new array,
+//And if all the elements in the array are true, then true is returned,
+//And false otherwise.
+
+
+function SimpleSymbols(str) { 
+  	var result =[];
+	var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  	for (i=0; i < str.length; i++) { 	//Loops through the entire entered string one character at a time
+    	for (j=0; j < alphabet.length; j++) {	//Loops through the alphabet
+          	if (str[i] == alphabet[j]) {	//Checks to see if the character in the entered string exists in the alphabet
+          	    j = alphabet.length;	//If so then the alphabet loop is stopped
+          	    if (str[i-1] == '+' && str[i+1] == '+') {	//If the element before and the element after of the matched character is a + then a true result is returned
+                  result[i] = true;
+                }
+                else {				//Otherwise a false result is returned into the array
+                    result[i] = false;
+                }
+          	}
+            else if (str[i] != alphabet) {	//If the character is not in the alphabet then a true result is returned into the array, this is to prevent undefined holes
+                result[i] = true;
+            }
+        }
+    }
+    
+    for (i=0; i < result.length; i++) {		//The new result array is then looped over to check to see if every element is true
+        if (result[i]==true) {
+            overallResult = true;		//If every element is true then the overallResult will be true
+        }
+        else {
+            overallResult = false;		//If not then the overallResult is false
+            i = result.length;			//The loop is stopped
+        }
+    }
+  return overallResult;
+}
