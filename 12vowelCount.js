@@ -7,7 +7,7 @@ function VowelCount(str) {
 
 	for (i=0; i < str.length; i++) {		//For loop which will go through every letter of the inputted string 
     		for (j=0; j<vowels.length; j++) {	//For loop which will go through every letter in the vowels variable
-        		if (str[i] == vowels[j]) {	//If a match is made between a letter in the string a letter in the vowel, 1 is added to the totalVowels variable
+        		if (str[i] == vowels[j]) {	//If a match is made between a letter in the string and a letter in the vowel, 1 is added to totalVowels
             		totalVowels += 1;
         		}
     		}
